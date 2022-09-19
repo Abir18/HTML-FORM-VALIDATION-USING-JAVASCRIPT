@@ -21,7 +21,7 @@ form.addEventListener("submit", e => {
         !validPassword ||
         !validPassword2
     ) {
-        return "invalid"
+        return
     } else {
         const val = {
             name: validName,
@@ -37,6 +37,10 @@ form.addEventListener("submit", e => {
     address.value = ""
     password.value = ""
     password2.value = ""
+
+    document
+        .querySelectorAll(".form-control")
+        .forEach(element => (element.className = "form-control"))
 })
 
 const usernameValidation = () => {
